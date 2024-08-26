@@ -1,0 +1,232 @@
+/* FONT - OSWALD */
+
+@import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+  --clr-bg-body: #f5f7f8;
+  --font-size: 1rem;
+  --clr-red-400: hsl(0, 96%, 30%);
+  --clr-red-700: hsl(0, 98%, 43%);
+  --clr-green-400: hsl(120, 84%, 17%);
+}
+@media (min-width: 25em) {
+  :root {
+    --font-size: 1rem;
+  }
+}
+@media (min-width: 60em) {
+  :root {
+    --font-size: 1.1rem;
+  }
+}
+
+/* CSS RESET */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+
+html {
+  font-size: var(--font-size);
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Oswald", sans-serif;
+  background: var(--clr-bg-body);
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* MY STYLES */
+
+.container {
+  width: min(100%, 1140px);
+  margin-inline: auto;
+  padding: 2em 1em;
+}
+
+.container > h1 {
+  text-align: center;
+  font-size: 3rem;
+  color: var(--clr-green-400);
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+.container > p {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--clr-red-400);
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+.cart-block {
+  overflow: hidden;
+  border-radius: 1em;
+  box-shadow: 0.2px 0.2px 1px #45474b;
+}
+.cartitem {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+  box-shadow: 0.2px 0.2px 1px #45474b;
+  gap: 1rem;
+  align-items: center;
+  background-color: #fff;
+}
+.cart-block > *:not(:last-child) {
+  margin-bottom: 0.2rem;
+}
+
+.cartitem > * {
+  flex: 1;
+  flex-basis: 1rem;
+}
+
+@media (max-width: 48em) {
+  .cartitem {
+    flex-direction: column;
+    align-content: flex-start;
+  }
+}
+
+.cartitem .cartitem__details {
+  flex-grow: 2;
+}
+
+.cartitem .cartitem__details p {
+  font-size: 0.9rem;
+  font-weight: 100;
+}
+.img-block {
+  width: 12.5rem;
+  height: 12.5rem;
+}
+
+.img-block img {
+  aspect-ratio: 1 / 1;
+  object-fit: center;
+}
+
+.cart-description,
+.total {
+  padding: 2em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.cart-description > * h3 {
+  color: grey;
+  font-weight: 400;
+}
+
+.cart-description > * p,
+.total p {
+  font-size: 1.25rem;
+}
+
+.quantity {
+  font-size: 1.15rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.price button {
+  background-color: var(--clr-red-700);
+  font-weight: 400;
+  padding: 0.4em;
+  border-radius: 0.4em;
+  color: var(--clr-bg-body);
+  border: none;
+  cursor: pointer;
+  transition: transform 100ms, background-color 500ms;
+}
+
+.price button:focus,
+.price button:hover {
+  outline: none;
+  transform: scale(1.05);
+  background-color: var(--clr-red-400);
+}
+
+.cart-description > *,
+.total {
+  display: flex;
+  justify-content: space-between;
+}
+
+.total {
+  font-weight: 700;
+}
+
+.empty-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 900;
+  min-height: 50vh;
+}
